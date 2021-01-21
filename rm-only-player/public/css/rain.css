@@ -1,0 +1,104 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: #182aab; */
+    background-color: #fff;
+    /* background-color: #1d2eab; */
+    overflow: hidden;
+    color: white;
+}
+
+.muzieknootjes {
+    display: block;
+    margin: auto;
+    position: relative;
+    width: 60%;
+    min-width: 300px;
+    height: 400px;
+    border: 0px solid #000;
+}
+
+.noot-1,
+.noot-2,
+.noot-3,
+.noot-4,
+.noot-5 {
+    position: absolute;
+    animation: notes 2s infinite linear;
+    font-size: 35px;
+    opacity: 0;
+    color: #000;
+}
+
+.noot-1 {
+    top: 300px;
+    left: 0;
+    animation-delay: 0.5s;
+}
+
+.noot-2 {
+    top: 60px;
+    left: 30%;
+    animation-delay: 1s;
+}
+
+.noot-3 {
+    top: 180px;
+    left: 60%;
+    animation-delay: 1.5s;
+}
+
+.noot-4 {
+    top: 80px;
+    left: 90%;
+    animation-delay: 2s;
+}
+
+.noot-5 {
+    top: 100px;
+    left: 10%;
+    animation-delay: 1s;
+}
+
+@keyframes notes {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5) translate(50%, -50%);
+    }
+    80% {
+        opacity: 0;
+        transform: scale(1.5) translate(100%, -100%);
+    }
+    100% {
+        transform: scale(1.5) translate(100%, -100%);
+        opacity: 0;
+    }
+}
+
+/* Animación con keyframe llamada "latidos" */
+@keyframes latidos {
+    from {
+        transform: none;
+    }
+    65% {
+        transform: scale(1.1);
+    }
+    to {
+        transform: none;
+    }
+}
+/* En la clase corazon vamos a llamar latidos en la animación  */
+.logo {
+    /* display: inline-block;
+    font-size: 150px;
+    text-shadow: 0 0 10px #222, 1px 1px 0 #450505;
+    color: red; */
+    animation: latidos 1.5s infinite;
+    transform-origin: center;
+}
